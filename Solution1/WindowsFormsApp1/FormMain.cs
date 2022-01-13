@@ -22,7 +22,23 @@ namespace WindowsFormsApp1
             base.OnShown(e);
 
             Login login = new Login();
+            login.UserLoggedIn += Login_UserLoggedIn;
             login.Show(this);
+        }
+
+        private void Login_UserLoggedIn(object sender, EventArgs e)
+        {
+
+            using (DataSet ds = new DataSet())
+            {
+                ds.ReadXml("popisKnjiga.xml");
+                dataGridView1.DataSource = ds.Tables[0];
+            }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

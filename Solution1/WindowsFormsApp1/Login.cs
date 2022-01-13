@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Login : Form
     {
+        public event EventHandler UserLoggedIn;
         public Login()
         {
             InitializeComponent();
@@ -37,6 +38,8 @@ namespace WindowsFormsApp1
         {
             if (UserIsValid())
             {
+                if (UserLoggedIn != null)
+                    UserLoggedIn(this, EventArgs.Empty);
                 Close();
                 return;
             }

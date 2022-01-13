@@ -63,6 +63,7 @@ namespace WindowsFormsApp1
             this.textBoxPasword.Name = "textBoxPasword";
             this.textBoxPasword.Size = new System.Drawing.Size(100, 22);
             this.textBoxPasword.TabIndex = 9;
+            this.textBoxPasword.UseSystemPasswordChar = true;
             // 
             // label2
             // 
